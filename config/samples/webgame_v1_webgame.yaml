@@ -1,0 +1,20 @@
+apiVersion: webgame.webgame.zjl/v1
+kind: WebGame
+metadata:
+  labels:
+    app.kubernetes.io/name: webgame
+    app.kubernetes.io/instance: webgame-sample
+    app.kubernetes.io/part-of: webgame
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: webgame
+  name: webgame-sample
+spec:
+  displayName: test-webgame-instance
+  gameType: "2048"
+  ingressClass: nginx
+  indexPage: /index.html
+  serverPort: 80
+  image: webgamedevelop/2048:latest
+  replicas: 1
+  imagePullSecrets:
+  - name: test-image-pull-secret

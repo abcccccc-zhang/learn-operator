@@ -1,0 +1,3 @@
+kubebuilder init \
+	--domain webgame.zjl \
+	--repo gitee.com/zjlll/game-operator
