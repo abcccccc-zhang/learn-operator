@@ -80,7 +80,8 @@ func main() {
 	pflag.BoolP("help", "h", false, "Print help information")
 	pflag.CommandLine.ParseErrorsWhitelist.UnknownFlags = true
 	kflag.InitFlags()
-
+	//上面是解析命令行参数,设置日志系统  启动方式：  ./manager --metrics-bind-address=:9090    使用 zap（Uber 开发的高性能日志库）作为日志后端--zap-log-level=debug
+	//--zap-devel=true  flag.Parse()解析所有命令行参数 设置 controller-runtime 的日志系统ctrl.SetLogger(zap.New(zap.UseFlagOptions(&opts)))
 	if pflag.CommandLine.Changed("help") {
 		pflag.Usage()
 		return
